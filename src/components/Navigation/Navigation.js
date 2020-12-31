@@ -1,15 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Nav, Logo, Content, LanguageChoice, User } from './NavigationElements';
 import logo from './logo.svg';
-
-const Logo = styled.img`
-	width: 50px;
-	height: 50px;
-`
+import languageIcon from './language.svg';
+import menu from './menu.svg';
+import user from './user.svg';
 
 function Navigation() {
 	return (
-		<Logo src={logo} alt='logo' />
+		<Nav>
+			<Logo><a href='/'><img src={logo} alt='logo'/>airbnb</a></Logo>
+			<Content>
+				<a href='/' target="_blank" rel="noopener noreferrer">Become a host</a>
+				<LanguageChoice languageIcon={languageIcon}/>
+				<User>
+					<div><img src={menu} alt='menu'/></div>
+					<div><img src={user} alt='user'/></div>
+				</User>
+			</Content>
+		</Nav>
 	)
 }
 
