@@ -30,12 +30,24 @@ export const Content = styled.div`
 	align-items: center;
 	height: 50px;
 	&>a {
+		position: relative;
 		text-decoration: none;
 		font-size: 14px;
 		padding-right: 12px;
 	}
+	&>a:hover::before {
+		content: "";
+    position: absolute;
+    top: -12px;
+    bottom: -12px;
+    left: -15px;
+    right: 0px;
+    z-index: -1;
+    border-radius: 22px;
+    background-color: rgb(247, 247, 247);
+	}
 `
-export const LanguageChoice = styled.button`
+export const LanguageChoiceButton = styled.button`
 	background: transparent url(${props => props.languageIcon|| ""});
 	background-size: cover;
 	width: 16px;
@@ -43,6 +55,18 @@ export const LanguageChoice = styled.button`
 	border: none;
 	cursor: pointer;
 	margin: 0 24px 0 12px;
+	position: relative;
+	&:hover::before {
+		content: "";
+    position: absolute;
+    top: -12px;
+    bottom: -12px;
+    left: -15px;
+    right: -15px;
+    z-index: -1;
+    border-radius: 22px;
+    background-color: rgb(247, 247, 247);
+	}
 `
 export const User = styled.button`
 	display: flex;
