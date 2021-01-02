@@ -5,8 +5,14 @@ import close from './close.svg';
 
 function LanguageModal({ show, closeModal }){
 	const modalShowOrNot = show ? {display: 'block'} : {display: 'none'};
+	
+	const closeByClickingOutside = (event) => {
+		let modal = document.getElementById('languageModal');
+		if (event.target === modal) closeModal();
+	}
+
 	return (
-		<Modal style={modalShowOrNot}>
+		<Modal id='languageModal' style={modalShowOrNot} onClick={closeByClickingOutside}>
 			<ModalContent>
 				<ButtonClose type='button' onClick={closeModal}>
 					<img src={close} alt='close-modal' style={{width: 12}}/>
