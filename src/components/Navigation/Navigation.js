@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Nav, Logo, Content, LanguageChoiceButton, User } from './NavigationElements';
 import logo from './logo.svg';
-import languageIcon from './language.svg';
 import menu from './menu.svg';
 import user from './user.svg';
-import LanguageModal from './LanguageModal';
+import languageIcon from '../Language/language.svg';
+import LanguageModal from '../Language/LanguageModal';
 
 function Navigation() {
 	const [ show, setShow ] = useState(false);
