@@ -33,6 +33,7 @@ export const Content = styled.div`
 		position: relative;
 		text-decoration: none;
 		font-size: 14px;
+		font-weight: 500;
 		padding-right: 12px;
 	}
 	&>a:hover::before {
@@ -68,7 +69,7 @@ export const LanguageChoiceButton = styled.button`
     background-color: rgb(247, 247, 247);
 	}
 `
-export const User = styled.button`
+export const UserButton = styled.button`
 	display: flex;
 	align-items: center;
 	cursor: pointer;

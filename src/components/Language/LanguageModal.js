@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, ModalContent, ButtonClose, Tabs, Tab, Title, Languages, Currencies } from './LanguageModalElements';
+import { Modal, ModalContent, ButtonClose, Tabs, Tab, Title, Languages, Currencies } from './LanguageModalStyle';
 import { suggestedLanguagesRegions, languagesRegions, currency } from './LanguageModalChoices';
 import close from './close.svg';
 
@@ -51,6 +51,7 @@ function Choice(closeModal){
 						<Languages>
 							{ suggestedLanguagesRegions.map( (item, i) => 
 								<li key={i}>
+									{/* TODO: this anchor tag will GET a page refresh with selected language/region */}
 									<a href='/#' onClick={afterChosen}>
 										<div>{item.language}</div>
 										<div>{item.region}</div>
