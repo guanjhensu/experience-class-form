@@ -68,14 +68,12 @@ export const Title = styled.h1`
 `
 export const Languages = styled.ul`
 	display: flex;
-	justify-content: flex-start;
-	align-items: center;
 	flex-wrap: wrap;
 	list-style: none;
 	& li {
 		margin: 8px 16px 8px 0;
 		padding: 8px 8px 8px 8px;
-		width: 158px;
+		width: 164px;
 	}
 	& li:nth-child(1) {
 		border: 1px solid black;
