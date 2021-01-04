@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+#API(temporary. TODO: put API key in backend enviornment variables)
+/src/config.js
+
 # testing
 /coverage
 

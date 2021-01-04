@@ -24,7 +24,7 @@ function Navigation() {
 			<Nav>
 				<Logo><a href='/'><img src={logo} alt='logo'/>airbnb</a></Logo>
 				<Content>
-					<a href='/' target="_blank" rel="noopener noreferrer">Become a host</a>
+					<a href='/' target='_blank' rel='noopener noreferrer'>Become a host</a>
 					<LanguageChoiceButton 
 						type='button' onClick={ () => setShowLanguageModal(!showLanguageModal) } 
 						languageIcon={languageIcon} />
