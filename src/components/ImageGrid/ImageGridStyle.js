@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Grid = styled.div`
-	padding: 32px 80px 0 80px;
+	padding: 0 80px;
 	@media (max-width: 1120px) {
 		padding: 32px 40px 0 40px;
 	}
-	height: 400px;
+	height: 440px;
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-	grid-template-rows: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 220px);
 	gap: 8px;
 
 	& .item-0 {
@@ -34,6 +34,7 @@ export const Grid = styled.div`
 	& img {
 		min-height: 100%;
 		max-height: 100%;
+		height: 100%;
 		width: 100%;
 		object-fit: cover;
 		transition: all 0.4s ease;
