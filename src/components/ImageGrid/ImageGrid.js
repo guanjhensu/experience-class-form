@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { createApi } from 'unsplash-js';
-import config from '../../config';
+import { Grid, CreditPhotographer, Loading, ErrorMsg } from './ImageGridStyle';
+import UnsplashAPI from '../../api/UnsplashAPI';
 import ImageModal from './ImageModal';
-import { Grid, CreditPhotographer, Loading, Error } from './ImageGridStyle';
-
-const api = createApi({
-  accessKey: config.UNSPLASH_ACCESS_KEY
-});
 
 function ImageGrid() {
+
 	const [ data, setPhotosResponse ] = useState(null);
+	const [ showModal, setShowModal ] = useState(false);
+	const [ selectedPhoto, setSelectedPhoto ] = useState({ photoId: null, index: 0 });
 
 	useEffect(() => {
-    api.search
+    UnsplashAPI.search
       .getPhotos({ 
       	query: 'cat',
       	page: 1,
@@ -23,18 +21,23 @@ function ImageGrid() {
         setPhotosResponse(result);
       })
       .catch(() => {
-        alert('something went wrong! Check your internet connection.');
-      });
+        alert('Something went wrong. Check your internet connection.');
+      })
   }, []);
+
+  const openModal = (photoId, index) => {
+  	setSelectedPhoto({ photoId: photoId, index: index });
+  	setShowModal(true);
+  }
 
   if (data === null) {
     return <Loading>Loading...</Loading>
   } else if (data.errors) {
     return (
-      <Error>
+      <ErrorMsg>
         <div>{data.errors[0]}</div>
         <div>PS: Make sure to set your access token!</div>
-      </Error>
+      </ErrorMsg>
     )
   } else {
     return (
@@ -44,9 +47,8 @@ function ImageGrid() {
 	    			const { urls, user } = photo;
 	    			return (
 		    				<div key={photo.id} className={`item-${i}`} >
-			    				<a href={urls.full} target='_blank' rel='noopener noreferrer'>
-			    					<img src={urls.regular} alt={photo.description}/>
-			    				</a>
+		    						<img src={urls.regular} alt={photo.description}
+		    						onClick={() => openModal(photo.id, i)} />
 			    				<CreditPhotographer
 			    					href={`https://unsplash.com/@${user.username}`}
 			    					target='_blank' rel='noopener noreferrer' >
@@ -56,7 +58,10 @@ function ImageGrid() {
 	    			)
 	    		}) }
 	    	</Grid>
-	    	{/* <ImageModal /> */}
+	    	<ImageModal 
+	    		show={showModal} 
+	    		photo={selectedPhoto} 
+	    		closeModal={() => setShowModal(false)} />
     	</>
     );
   }	

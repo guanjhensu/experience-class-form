@@ -4,10 +4,10 @@ import LanguageModal from '../Language/LanguageModal';
 import NavUserMenu from './NavUserMenu';
 import useOutsideClick from '../../hooks/useOutsideClick';
 
-import logo from './logo.svg';
-import menu from './menu.svg';
-import user from './user.svg';
-import languageIcon from '../Language/language.svg';
+import logo from '../../icons/logo.svg';
+import menu from '../../icons/menu.svg';
+import user from '../../icons/user.svg';
+import languageIcon from '../../icons/language.svg';
 
 
 function Navigation() {

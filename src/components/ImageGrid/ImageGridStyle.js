@@ -68,6 +68,6 @@ export const Loading = styled.div`
 	text-align: center;
 	font-size: 20px;
 `
-export const Error = styled(Loading)`
+export const ErrorMsg = styled(Loading)`
 	line-height: 1.6;
 `

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Modal, ModalContent, ButtonClose, Tabs, Tab, Title, Languages, Currencies } from './LanguageModalStyle';
 import { suggestedLanguagesRegions, languagesRegions, currency } from './LanguageModalChoices';
-import close from './close.svg';
+import close from '../../icons/close.svg';
 
 function LanguageModal({ show, closeModal }){
-	const modalShowOrNot = show ? {display: 'block'} : {display: 'none'};
+	const modalShowOrNot = show ? {} : {display: 'none'};
 	
 	const closeByClickingOutside = (event) => {
 		let modal = document.getElementById('languageModal');
