@@ -1,36 +1,12 @@
-import React, { useState } from 'react';
-import { Modal, ModalContent, ButtonClose, Tabs, Tab, Title, Languages, Currencies } from './LanguageModalStyle';
-import { suggestedLanguagesRegions, languagesRegions, currency } from './LanguageModalChoices';
-import close from '../../icons/close.svg';
+import React, { useState, useContext } from 'react';
+import ModalContext from '../Modal/ModalContext';
+import { suggestedLanguagesRegions, languagesRegions, currency } from './LanguageChoices';
+import { Tabs, Tab, Title, Languages, Currencies } from './ChoiceStyle';
 
-function LanguageModal({ show, closeModal }){
-	const modalShowOrNot = show ? {} : {display: 'none'};
-	
-	const closeByClickingOutside = (event) => {
-		let modal = document.getElementById('languageModal');
-		if (event.target === modal) closeModal();
-	}
-
-	return (
-		<Modal id='languageModal' style={modalShowOrNot} onClick={closeByClickingOutside}>
-			<ModalContent>
-				<ButtonClose type='button' onClick={closeModal}>
-					<img src={close} alt='close-modal' style={{width: 12}}/>
-				</ButtonClose>
-				{ Choice(closeModal) }
-			</ModalContent>
-		</Modal>
-	)
-}
-
-function Choice(closeModal){
+function Choice(){
 	const tabs = [ 'Language and region', 'Currency' ];
 	const [ activeTab, setActiveTab ] = useState(tabs[0]);
-
-	const afterChosen = () => {
-		closeModal();
-		setActiveTab(tabs[0]);
-	}
+	const { handleModal } = useContext(ModalContext);
 	
 	return (
 		<>
@@ -52,7 +28,7 @@ function Choice(closeModal){
 							{ suggestedLanguagesRegions.map( (item, i) => 
 								<li key={i}>
 									{/* TODO: this anchor tag will GET a page refresh with selected language/region */}
-									<a href='/#' onClick={afterChosen}>
+									<a href='/#' onClick={handleModal}>
 										<div>{item.language}</div>
 										<div>{item.region}</div>
 									</a>
@@ -65,7 +41,7 @@ function Choice(closeModal){
 						<Languages>
 							{ languagesRegions.map( (item, i) => 
 								<li key={i}>
-									<a href='/#' onClick={afterChosen}>
+									<a href='/#' onClick={handleModal}>
 										<div>{item.language}</div>
 										<div>{item.region}</div>
 									</a>
@@ -80,7 +56,7 @@ function Choice(closeModal){
 					<Currencies>
 						{ currency.map( (item, i) => 
 							<li key={i}>
-								<a href='/#' onClick={afterChosen}>
+								<a href='/#' onClick={handleModal}>
 									<div>{item.nation}</div>
 									<div>{item.symbol}</div>
 								</a>
@@ -92,5 +68,4 @@ function Choice(closeModal){
 		</>
 	)
 }
-
-export default LanguageModal;
+export default Choice;

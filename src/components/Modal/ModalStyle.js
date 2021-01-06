@@ -37,6 +37,9 @@ export const ModalContent = styled.div`
   animation: ${appearfrombottom} 0.4s ease-out;
 `
 export const ButtonClose = styled.button`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 32px;
 	height: 32px;
 	background: none;

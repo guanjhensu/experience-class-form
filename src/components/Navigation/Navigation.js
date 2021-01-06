@@ -1,17 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { Nav, Logo, Content, LanguageChoiceButton, UserButton } from './NavigationStyle';
-import LanguageModal from '../Language/LanguageModal';
+import ModalContext from '../Modal/ModalContext';
+import Choice from '../Language/Choice';
 import NavUserMenu from './NavUserMenu';
 import useOutsideClick from '../../hooks/useOutsideClick';
-
 import logo from '../../icons/logo.svg';
 import menu from '../../icons/menu.svg';
 import user from '../../icons/user.svg';
 import languageIcon from '../../icons/language.svg';
 
-
 function Navigation() {
-	const [ showLanguageModal, setShowLanguageModal ] = useState(false);
+	const { handleModal } = useContext(ModalContext);
 	const [ showMenu, setShowMenu ] = useState(false);
 	
 	const ref = useRef(null);
@@ -26,10 +25,8 @@ function Navigation() {
 				<Content>
 					<a href='/' target='_blank' rel='noopener noreferrer'>Become a host</a>
 					<LanguageChoiceButton 
-						type='button' onClick={ () => setShowLanguageModal(!showLanguageModal) } 
+						type='button' onClick={() => handleModal(<Choice />)} 
 						languageIcon={languageIcon} />
-					<LanguageModal 
-						show={showLanguageModal} closeModal={ () => setShowLanguageModal(false) } />
 					<UserButton 
 						type='button' onClick={ () => setShowMenu(!showMenu) } >
 						<div><img src={menu} alt='menu'/></div>
