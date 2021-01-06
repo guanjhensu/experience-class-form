@@ -21,7 +21,7 @@ function ImageGrid() {
         setPhotosResponse(result);
       })
       .catch(() => {
-        alert('Something went wrong. Check your internet connection.');
+        alert('Something went wrong when loading images. Check your internet connection.');
       })
   }, []);
 

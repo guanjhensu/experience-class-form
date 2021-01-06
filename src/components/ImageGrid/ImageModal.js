@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import UnsplashAPI from '../../api/UnsplashAPI';
 import { Modal, ModalContent, TopNav, FullImage } from './ImageModalStyle';
-import { Loading, ErrorMsg } from './ImageGridStyle';
+import { ErrorMsg } from './ImageGridStyle';
 import close from '../../icons/close.svg';
 
 function ImageModal({ show, photo, closeModal }) {
 	let showOrNot = show ? {} : { display: 'none' };
+
 	const { photoId, index } = photo;
 	const [ data, setPhotosResponse ] = useState(null);
 
@@ -14,13 +15,18 @@ function ImageModal({ show, photo, closeModal }) {
 			UnsplashAPI.photos.get({ photoId: photoId })
 			.then(result => setPhotosResponse(result))
 			.catch(() => {
-        alert('Something went wrong in Modal. Check your internet connection.');
+        alert('Something went wrong when loading full size image. Check your internet connection.');
       })
 		}
 	}, [photoId]);
 
+	const closeModalClearPhoto = () => {
+		setPhotosResponse(null);
+		closeModal();
+	}
+
 	if (data === null) {
-    return <Loading>Loading...</Loading>
+    return <div></div>
   } else if (data.errors) {
     return (
       <ErrorMsg>
@@ -34,7 +40,7 @@ function ImageModal({ show, photo, closeModal }) {
 				<Modal style={showOrNot}>
 					<ModalContent>
 						<TopNav>
-							<button onClick={closeModal}>
+							<button onClick={closeModalClearPhoto}>
 								<div><img src={close} alt='close' /></div>
 								<span>Close</span>
 							 </button>
