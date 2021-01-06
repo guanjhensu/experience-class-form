@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
 export const Grid = styled.div`
-	padding: 0 80px;
-	@media (max-width: 1120px) {
-		padding: 32px 40px 0 40px;
-	}
+	padding: 0 calc(100%/18);
 	height: 440px;
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
