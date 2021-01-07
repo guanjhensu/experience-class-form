@@ -12,9 +12,9 @@ function ImageGrid() {
 	useEffect(() => {
     UnsplashAPI.search
       .getPhotos({ 
-      	query: 'cat',
+      	query: 'painter',
       	page: 1,
-  			perPage: 9, 
+  			perPage: 5, 
       	orientation: 'portrait' 
       })
       .then(result => {

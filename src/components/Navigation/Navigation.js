@@ -25,7 +25,7 @@ function Navigation() {
 				<Content>
 					<a href='/' target='_blank' rel='noopener noreferrer'>Become a host</a>
 					<LanguageChoiceButton 
-						type='button' onClick={() => handleModal(<Choice />)} 
+						type='button' onClick={() => handleModal(<Choice />, 'large')} 
 						languageIcon={languageIcon} />
 					<UserButton 
 						type='button' onClick={ () => setShowMenu(!showMenu) } >

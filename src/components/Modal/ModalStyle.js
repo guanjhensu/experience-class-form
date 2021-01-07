@@ -11,7 +11,7 @@ export const ModalBack = styled.div`
   width: 100%;
   height: 100%;
 	z-index: 1;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.3);
 	animation: ${appear} 0.4s ease-out;
 	padding-top: 40px; /* Location of the box */
 `
@@ -25,18 +25,29 @@ const appearfrombottom = keyframes`
     opacity: 1;
   }
 `
+const getModalSize = (modalSize) => {
+	switch(modalSize) {
+		case 'large' : return { width: '77%', height: '82%', closeButtonSize: '12px' };
+		case 'medium' : return { width: '57%', height: 'auto', closeButtonSize: '16px' };
+		case 'small': return { width: '30%', height: 'auto', closeButtonSize: '16px' };
+		default: return { width: '57%', height: 'auto', closeButtonSize: '16px' };
+	}
+}
 export const ModalContent = styled.div`
 	background-color: white;
 	border-radius: 12px;
 	margin: auto;
-	width: 77%;
-	height: 82%;
+	width: ${props=> getModalSize(props.modalSize).width };
+	height: ${props=> getModalSize(props.modalSize).height };
   padding: 24px;
   overflow: auto; /* Enable scroll if needed */
   position: relative;
   animation: ${appearfrombottom} 0.4s ease-out;
 `
 export const ButtonClose = styled.button`
+	position: absolute;
+	top: 15px;
+	left: 15px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -46,6 +57,10 @@ export const ButtonClose = styled.button`
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
+	& img {
+		width: ${props=> getModalSize(props.modalSize).closeButtonSize };
+		height: ${props=> getModalSize(props.modalSize).closeButtonSize };
+	}
 	&:hover {
 		background-color: rgb(247, 247, 247);
 	}

@@ -13,12 +13,20 @@ function App() {
 		numberOfReviews: 12,
 		location: 'Madrid, Spain',
 		category: 'Field Trips Online Experiences',
-		host: 'Ana',
-		duration: 2,
-		students: 5,
-		studentsLimit: 7,
-		device: ['computer', 'phone', 'tablet'],
-		language: ['English', 'Spanish', 'Serbian'],
+		host: {
+			hostName: 'Ana',
+			hostPhotoID: 'DpGNQtyILXI'
+		},
+		basicInfo: {
+			duration: 2,
+			students: 5,
+			privateGroup: {
+				available: true,
+				limit: 7
+			},
+			devices: ['computer', 'phone', 'tablet'],
+			languages: ['English', 'Spanish', 'Serbian']
+		}
 	});
 
   return (

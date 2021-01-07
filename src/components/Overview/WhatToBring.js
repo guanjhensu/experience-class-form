@@ -15,7 +15,7 @@ function WhatToBring() {
 				<li>water cup</li>
 				<li>paints (you can use watercolor, tempera, acrylic, ink, pen..., most of these materials will do)</li>
 			</ul>
-			<button onClick={() => handleModal('show me what to bring~~~')}>Show all > </button>
+			<button onClick={() => handleModal('show me what to bring~~~', 'small')}>Show all > </button>
 		</>
 	)
 }

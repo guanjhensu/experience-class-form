@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Tabs = styled.div`
-	padding-top: 30px;
+	padding-top: 50px;
 	padding-bottom: 30px;
 `
 export const Tab = styled.button`

@@ -10,7 +10,7 @@ const TimeTable = styled.div`
 function Availability() {
 	return (
 		<TimeTable>
-			<div style={{ padding: `0 calc(100%/12)` }}>
+			<div style={{ padding: `0 calc(100%/10)` }}>
 				Availability
 			</div>
 		</TimeTable>
