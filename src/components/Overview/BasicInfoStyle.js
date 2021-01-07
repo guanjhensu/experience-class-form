@@ -12,6 +12,7 @@ export const Title = styled.div`
 	& a {
 		width: 56px;
 		img {
+			width: 100%;
 			height: 100%;
 			object-fit: cover;
 			border-radius: 100%;

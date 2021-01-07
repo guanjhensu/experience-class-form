@@ -13,7 +13,8 @@ export const ModalBack = styled.div`
 	z-index: 1;
 	background-color: rgba(0,0,0,0.3);
 	animation: ${appear} 0.4s ease-out;
-	padding-top: 40px; /* Location of the box */
+	display: grid;
+	place-items: center;
 `
 const appearfrombottom = keyframes`
 	from {
@@ -28,9 +29,9 @@ const appearfrombottom = keyframes`
 const getModalSize = (modalSize) => {
 	switch(modalSize) {
 		case 'large' : return { width: '77%', height: '82%', closeButtonSize: '12px' };
-		case 'medium' : return { width: '57%', height: 'auto', closeButtonSize: '16px' };
-		case 'small': return { width: '30%', height: 'auto', closeButtonSize: '16px' };
-		default: return { width: '57%', height: 'auto', closeButtonSize: '16px' };
+		case 'medium' : return { width: '57%', height: '60%', closeButtonSize: '16px' };
+		case 'small': return { width: '30%', height: '60%', closeButtonSize: '16px' };
+		default: return { width: '57%', height: '60%', closeButtonSize: '16px' };
 	}
 }
 export const ModalContent = styled.div`

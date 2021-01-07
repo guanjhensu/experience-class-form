@@ -41,8 +41,7 @@ function DescriptionModal() {
 				<br /><br />
 				Video conferencing is interactive, so you’ll be able to communicate with your host and other guests as much or as little as you’d like.
 				<br /><br />
-				Download Zoom: 
-					<a href='https://zoom.us/download' target='_blank' rel='noopener noreferrer'>[Desktop]</a>
+				Download Zoom:  <a href='https://zoom.us/download' target='_blank' rel='noopener noreferrer'>[Desktop]</a>
 					<a href='https://play.google.com/store/apps/details?id=us.zoom.videomeetings' target='_blank' rel='noopener noreferrer'>[Android]</a>
 					<a href='https://itunes.apple.com/app/id546505307' target='_blank' rel='noopener noreferrer'>[iOS]</a>
 			</p>

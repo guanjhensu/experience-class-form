@@ -1,22 +1,11 @@
 import React from 'react';
+import { OverviewStyled, Divider } from './OverviewStyle';
 import Title from './Title';
 import BasicInfo from './BasicInfo';
 import WhatToDo from './WhatToDo';
 import HowToParticipate from './HowToParticipate';
 import WhatToBring from './WhatToBring';
-import styled from 'styled-components';
 
-const OverviewStyled = styled.div`
-	/*background-color: red;*/
-	width: calc((100% / 3) * 2);
-	display: inline-block;
-`
-const Divider = styled.div`
-	height: 1px;
-	width: 100%;
-	display: block;
-	background-color: #dddddd;
-`
 
 function Overview({ info }) {
 	return (
@@ -43,6 +32,7 @@ function Overview({ info }) {
 	    	/>
 	    	<Divider></Divider>
 	    	<WhatToBring />
+	    	<Divider></Divider>
 			</div>
 		</OverviewStyled>
 	)

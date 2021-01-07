@@ -42,6 +42,7 @@ export const Cards = styled.div`
 	}
 `
 export const ModalStyle = styled.div`
+	padding-bottom: 32px;
 	& h1 {
 		font-size: 26px;
 		font-weight: 600;
