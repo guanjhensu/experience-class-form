@@ -6,6 +6,14 @@ import Availability from './components/Availability/Availability';
 import { ModalProvider } from './components/Modal/ModalContext';
 import Modal from './components/Modal/Modal';
 
+import styled from 'styled-components';
+
+const MainContent = styled.div`
+	display: grid;
+	grid-template-columns: 5fr 3fr;
+	margin-top: 12px;
+`
+
 function App() {
 	const [ info ] = useState({  // TODO: info should fetch from DB in the future
 		classTitle: 'Archaeology of Leaves Art Experience',
@@ -17,13 +25,22 @@ function App() {
 			hostName: 'Ana',
 			hostPhotoID: 'DpGNQtyILXI'
 		},
+		students: 5,
+		privateGroup: {
+			available: true,
+			limit: 7
+		},
+		price: {
+			eachGuest: 25,
+			eachGroup: 100
+		},
+		dates: [
+			{ date: 'Sat, Jan 9', time: '1:00 AM - 3:00 AM (CST)'},
+			{ date: 'Tue, Jan 12', time: '1:00 AM - 3:00 AM (CST)'},
+			{ date: 'Sat, Jan 16', time: '1:00 AM - 3:00 AM (CST)'},
+		],
 		basicInfo: {
 			duration: 2,
-			students: 5,
-			privateGroup: {
-				available: true,
-				limit: 7
-			},
 			devices: ['computer', 'phone', 'tablet'],
 			languages: ['English', 'Spanish', 'Serbian']
 		}
@@ -36,8 +53,10 @@ function App() {
 	      <Navigation />
 	      <main>
 	      	<ImageGrid />
-	      	<Overview info={info} />
-	      	<Availability />
+	      	<MainContent>
+	      		<Overview info={info} />
+	      		<Availability price={info.price} privateGroup={info.privateGroup} dates={info.dates} />
+	      	</MainContent>
 	      </main>
 	    </div>
     </ModalProvider>

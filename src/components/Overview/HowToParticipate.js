@@ -4,7 +4,7 @@ import ModalContext from '../Modal/ModalContext';
 import computer from '../../icons/computer.svg';
 import people from '../../icons/people.svg';
 
-function HowToParticipate({ host, privateGroup }) {
+function HowToParticipate({ host, privateGroup, price }) {
 	const { hostName } = host;
 	const { available, limit } = privateGroup;
 
@@ -24,7 +24,7 @@ function HowToParticipate({ host, privateGroup }) {
 					<div>
 						<img src={people} alt='book a private group'/>
 						<h3>Book a private group</h3>
-						<p>{hostName} can host private groups of any size, up to {limit} guests. Private group rates start at €100.</p>
+						<p>{hostName} can host private groups of any size, up to {limit} guests. Private group rates start at €{price.eachGroup}.</p>
 					</div>
 				} 
 			</Cards>

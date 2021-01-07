@@ -7,9 +7,10 @@ import people from '../../icons/people.svg';
 import computer from '../../icons/computer.svg';
 import message from '../../icons/message.svg';
 
-function BasicInfo({ host, basicInfo }) {
+function BasicInfo({ host, students, privateGroup, basicInfo }) {
 	const { hostName, hostPhotoID } = host;
-	const { duration, students, privateGroup, devices, languages } = basicInfo;
+	const { available, limit } = privateGroup;
+	const { duration, devices, languages } = basicInfo;
 
 	const [ hostPhoto, setHostPhoto ] = useState(null);
 
@@ -40,8 +41,8 @@ function BasicInfo({ host, basicInfo }) {
 				<div>
 					<img src={people} alt='people limit' />
 					<p> 
-						{ (privateGroup.available) ? 
-								`Up to ${students} people. Private groups available for up to ${privateGroup.limit}`
+						{ (available) ? 
+								`Up to ${students} people. Private groups available for up to ${limit}`
 								 : `Up to ${students} people.`}
 					</p>
 				</div>

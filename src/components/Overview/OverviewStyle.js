@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const OverviewStyled = styled.div`
-	/*background-color: red;*/
-	width: calc((100% / 3) * 2);
-	display: inline-block;
+	padding: 0 calc(100%/10) 0 calc(100%/10);
 `
 export const Divider = styled.div`
 	height: 1px;
