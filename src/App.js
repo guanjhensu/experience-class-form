@@ -41,8 +41,8 @@ function App() {
 		],
 		basicInfo: {
 			duration: 2,
-			devices: ['computer', 'phone', 'tablet'],
-			languages: ['English', 'Spanish', 'Serbian']
+			languages: ['English', 'Spanish', 'Serbian'],
+			devices: ['computer', 'phone', 'tablet']
 		}
 	});
 
