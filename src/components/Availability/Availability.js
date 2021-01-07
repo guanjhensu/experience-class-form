@@ -8,14 +8,12 @@ const AvailabilityStyled = styled.div`
 `
 const TimeTable = styled.div`
 	position: sticky;
-	top: 150px;
-	/*margin-top: auto;
-	bottom: 0;*/
+	margin-top: auto;
+	bottom: 24px;
 	border: 1px solid rgb(221, 221, 221);
 	border-radius: 12px;
 	box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 	padding: 24px;
-	height: 80vh;
 	width: 100%;
 `
 const Price = styled.div`

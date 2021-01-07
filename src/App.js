@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from './components/Navigation/Navigation';
+import SubNavigation from './components/Navigation/SubNavigation';
 import ImageGrid from './components/ImageGrid/ImageGrid';
 import Overview from './components/Overview/Overview';
 import Availability from './components/Availability/Availability';
@@ -52,6 +53,7 @@ function App() {
 	    <div>
 	      <Navigation />
 	      <main>
+	      	<SubNavigation />
 	      	<ImageGrid />
 	      	<MainContent>
 	      		<Overview info={info} />

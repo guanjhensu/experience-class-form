@@ -7,7 +7,6 @@ export const Grid = styled.div`
 	grid-template-columns: repeat(7, 1fr);
 	grid-template-rows: repeat(2, 220px);
 	gap: 8px;
-
 	& .item-0 {
 		grid-column: 1 / span 2;
 		grid-row: 1 / span 2;
