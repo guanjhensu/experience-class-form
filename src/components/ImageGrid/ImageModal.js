@@ -11,6 +11,7 @@ function ImageModal({ show, photo, closeModal }) {
 	const [ data, setPhotosResponse ] = useState(null);
 
 	useEffect(() => {
+		setPhotosResponse(null);
 		if(photoId) {
 			UnsplashAPI.photos.get({ photoId: photoId })
 			.then(result => setPhotosResponse(result))
@@ -19,11 +20,6 @@ function ImageModal({ show, photo, closeModal }) {
       })
 		}
 	}, [photoId]);
-
-	const closeModalClearPhoto = () => {
-		setPhotosResponse(null);
-		closeModal();
-	}
 
 	if (data === null) {
     return <div></div>
@@ -40,7 +36,7 @@ function ImageModal({ show, photo, closeModal }) {
 				<Modal style={showOrNot}>
 					<ModalContent>
 						<TopNav>
-							<button onClick={closeModalClearPhoto}>
+							<button onClick={closeModal}>
 								<div><img src={close} alt='close' /></div>
 								<span>Close</span>
 							 </button>
