@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from './components/Navigation/Navigation';
-import SubNavigation from './components/Navigation/SubNavigation';
+import SubNavigation from './components/SubNavigation/SubNavigation';
 import ImageGrid from './components/ImageGrid/ImageGrid';
 import Overview from './components/Overview/Overview';
 import Availability from './components/Availability/Availability';
@@ -54,8 +54,8 @@ function App() {
 	      <Navigation />
 	      <main>
 	      	<SubNavigation />
-	      	<ImageGrid />
-	      	<MainContent>
+	      	<ImageGrid/>
+	      	<MainContent id='mainContent'>
 	      		<Overview info={info} />
 	      		<Availability price={info.price} privateGroup={info.privateGroup} dates={info.dates} />
 	      	</MainContent>
