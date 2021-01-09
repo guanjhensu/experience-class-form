@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const AvailabilityStyled = styled.div`
 	padding: 48px calc(100%/7) 48px calc(100%/10);
 	display: flex;
-	z-index: -1;
 `
 export const TimeTable = styled.div`
 	position: sticky;

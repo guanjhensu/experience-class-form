@@ -26,6 +26,7 @@ export const ClassTitle = styled.h1`
 export const Info = styled.div`
 	display: flex;
 	align-items: center;
+	margin-top: 8px;
 	margin-bottom: 48px;
 	& span {
 		font-size: 14px;
@@ -38,7 +39,6 @@ export const Rating = styled.button`
 	background-color: transparent;
 	border: none;
 	height: 20px;
-	margin-top: 8px;
 	display: inline-flex;
 	align-items: center;
 	img {

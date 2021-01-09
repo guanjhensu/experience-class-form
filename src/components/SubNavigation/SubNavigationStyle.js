@@ -26,6 +26,7 @@ const getNavStyle = (type) => {
 }
 
 export const SubNav = styled.nav`
+	z-index: 1;
 	position: ${props=> getNavStyle(props.subNav).position };
 	top: 0;
 	background-color: ${props=> getNavStyle(props.subNav).backgroundColor };
@@ -70,6 +71,7 @@ export const SubNav = styled.nav`
 			padding: 4px 8px;
 			display: flex;
 			position: relative;
+			text-decoration: underline;
 			img {
 				width: 16px;
 				height: 16px;

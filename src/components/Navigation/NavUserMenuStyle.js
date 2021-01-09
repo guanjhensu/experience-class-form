@@ -11,7 +11,7 @@ export const Menu = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 8px 0;
-	z-index: 3;
+	z-index: 1;
 `
 export const Link = styled.a`
 	padding: 12px 16px;
