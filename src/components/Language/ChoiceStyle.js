@@ -5,9 +5,6 @@ export const Tabs = styled.div`
 	padding-bottom: 30px;
 `
 export const Tab = styled.button`
-	background: none;
-	border: none;
-	cursor: pointer;
 	font-size: 16px;
 	padding-right: 32px;
 	color: ${ props => (props.active) ? '' : 'rgb(176, 176, 176)' };

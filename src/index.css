@@ -12,3 +12,9 @@ body {
 a {
 	color: rgb(34, 34, 34)
 }
+
+button {
+	cursor: pointer;
+	background: none;
+	border: none;
+}

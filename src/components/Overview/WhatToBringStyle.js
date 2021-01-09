@@ -27,12 +27,9 @@ export const Lists = styled.ul`
 export const ShowAll = styled.button`
 	margin-top: 24px;
 	margin-bottom: 48px;
-	background: none;
-	border: none;
 	text-decoration: underline;
 	font-size: 16px;
 	color: rgb(113, 113, 113);
-	cursor: pointer;
 	display: flex;
 	align-items: center;
 	& img {

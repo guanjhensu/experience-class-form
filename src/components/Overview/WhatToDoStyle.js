@@ -16,10 +16,7 @@ export const Explanation = styled.p`
 `
 export const ReadMore = styled.button`
 	display: ${props => props.appear ? 'block' : 'none' };
-	background: none;
-	border: none;
 	text-decoration: underline;
-	cursor: pointer;
 	font-size: 16px;
 	margin-bottom: 48px;
 	margin-top: 5px;

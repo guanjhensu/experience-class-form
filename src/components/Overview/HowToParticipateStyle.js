@@ -32,12 +32,9 @@ export const Cards = styled.div`
 		}
 		button {
 			margin-top: 16px;
-			background: none;
-			border: none;
 			text-decoration: underline;
 			font-size: 16px;
 			color: rgb(113, 113, 113);
-			cursor: pointer;
 		}
 	}
 `

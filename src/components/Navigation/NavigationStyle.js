@@ -54,8 +54,6 @@ export const LanguageChoiceButton = styled.button`
 	background-size: cover;
 	width: 16px;
 	height: 16px;
-	border: none;
-	cursor: pointer;
 	margin: 0 24px 0 12px;
 	position: relative;
 	&:hover::before {
@@ -73,7 +71,6 @@ export const LanguageChoiceButton = styled.button`
 export const UserButton = styled.button`
 	display: flex;
 	align-items: center;
-	cursor: pointer;
 	border: 1px solid #DDDDDD;
 	border-radius: 21px;
 	background: transparent;

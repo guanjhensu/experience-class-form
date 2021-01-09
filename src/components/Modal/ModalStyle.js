@@ -54,10 +54,7 @@ export const ButtonClose = styled.button`
 	justify-content: center;
 	width: 32px;
 	height: 32px;
-	background: none;
-	border: none;
 	border-radius: 50%;
-	cursor: pointer;
 	& img {
 		width: ${props=> getModalSize(props.modalSize).closeButtonSize };
 		height: ${props=> getModalSize(props.modalSize).closeButtonSize };
