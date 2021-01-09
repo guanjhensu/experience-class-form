@@ -33,7 +33,6 @@ function Overview({ info }) {
     	/>
     	<Divider />
     	<WhatToBring />
-    	<Divider />
 		</OverviewStyled>
 	)
 }
