@@ -4,8 +4,10 @@ import SubNavigation from './components/SubNavigation/SubNavigation';
 import ImageGrid from './components/ImageGrid/ImageGrid';
 import Overview from './components/Overview/Overview';
 import Availability from './components/Availability/Availability';
+import Host from './components/Host/Host';
 import { ModalProvider } from './components/Modal/ModalContext';
 import Modal from './components/Modal/Modal';
+import { HeadshotProvider } from './components/Headshot/HeadshotContext';
 
 import styled from 'styled-components';
 
@@ -24,7 +26,8 @@ function App() {
 		category: 'Field Trips Online Experiences',
 		host: {
 			hostName: 'Ana',
-			hostPhotoID: 'DpGNQtyILXI'
+			hostPhotoID: 'DpGNQtyILXI',
+			year: 2015
 		},
 		students: 5,
 		privateGroup: {
@@ -48,6 +51,7 @@ function App() {
 	});
 
   return (
+  	<HeadshotProvider>
   	<ModalProvider>
   		<Modal />
 	    <div>
@@ -59,9 +63,11 @@ function App() {
 	      		<Overview info={info} />
 	      		<Availability price={info.price} privateGroup={info.privateGroup} dates={info.dates} />
 	      	</MainContent>
+	      	<Host host={info.host} />
 	      </main>
 	    </div>
     </ModalProvider>
+    </HeadshotProvider>
   );
 }
 

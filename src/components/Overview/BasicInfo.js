@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import UnsplashAPI from '../../api/UnsplashAPI';
+import React, { useEffect, useContext } from 'react';
 import { Title, Info } from './BasicInfoStyle';
+import HeadshotContext from '../Headshot/HeadshotContext';
 import user from '../../icons/user.svg';
 import time from '../../icons/time.svg';
 import people from '../../icons/people.svg';
@@ -12,25 +12,19 @@ function BasicInfo({ host, students, privateGroup, basicInfo }) {
 	const { available, limit } = privateGroup;
 	const { duration, devices, languages } = basicInfo;
 
-	const [ hostPhoto, setHostPhoto ] = useState(null);
+	const { data, getHeadshot } = useContext(HeadshotContext);
 
 	useEffect(() => {
-		if(hostPhotoID){
-			UnsplashAPI.photos.get({ photoId: hostPhotoID })
-			.then(result => setHostPhoto(result))
-			.catch(() => {
-				alert('Something went wrong when loading host image. Check your internet connection.')
-			})
-		}
-	}, [hostPhotoID]);
+		getHeadshot(hostPhotoID);
+	}, []);
 
 	return (
 		<div style={{ margin: '48px 0 24px 0' }}>
 			<Title>
 				<h1>Online experience hosted by {hostName}</h1>
 				<a href='/'>
-					{ (!hostPhoto) ? <img src={user} alt='default host' />
-				 : <img src={hostPhoto.response.urls.thumb} alt='host' /> }
+					{ (!data) ? <img src={user} alt='default host' />
+				 : <img src={data.response.urls.thumb} alt='host' /> }
 				</a>
 			</Title>
 			<Info>
