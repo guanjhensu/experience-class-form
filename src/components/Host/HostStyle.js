@@ -10,6 +10,7 @@ export const HostInfo = styled.div`
 		a {
 			display: inline-block;
 			width: 56px;
+			height: 56px;
 			margin-right: 16px;
 			img {
 				width: 100%;

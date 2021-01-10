@@ -5,6 +5,7 @@ import ImageGrid from './components/ImageGrid/ImageGrid';
 import Overview from './components/Overview/Overview';
 import Availability from './components/Availability/Availability';
 import Host from './components/Host/Host';
+import Reviews from './components/Reviews/Reviews';
 import { ModalProvider } from './components/Modal/ModalContext';
 import Modal from './components/Modal/Modal';
 import { HeadshotProvider } from './components/Headshot/HeadshotContext';
@@ -20,8 +21,8 @@ const MainContent = styled.div`
 function App() {
 	const [ info ] = useState({  // TODO: info should fetch from DB in the future
 		classTitle: 'Archaeology of Leaves Art Experience',
-		rating: 5.0,
-		numberOfReviews: 12,
+		rating: 4.7,
+		numberOfReviews: 5,
 		location: 'Madrid, Spain',
 		category: 'Field Trips Online Experiences',
 		host: {
@@ -64,6 +65,7 @@ function App() {
 	      		<Availability price={info.price} privateGroup={info.privateGroup} dates={info.dates} />
 	      	</MainContent>
 	      	<Host host={info.host} />
+	      	<Reviews rating={info.rating} numberOfReviews={info.numberOfReviews} />
 	      </main>
 	    </div>
     </ModalProvider>

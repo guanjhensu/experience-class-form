@@ -6,7 +6,6 @@ function useHeadshot() {
 
 	const getHeadshot = ( photoId=null ) => {
 		if(photoId){
-			console.log('will called unsplash for headshot image');
 			UnsplashAPI.photos.get({ photoId: photoId })
 			.then(result => setData(result))
 			.catch(() => {
