@@ -5,6 +5,9 @@ export const Title = styled.h1`
 	font-weight: 500;	
 	margin-top: 48px;
 	margin-bottom: 24px;
+	@media (max-width: 744px) {
+		margin-top: 32px;
+	}
 `
 export const Explanation = styled.p`
 	height: ${props => props.expand ? 'auto' : '120px' };

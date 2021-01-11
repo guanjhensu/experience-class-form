@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
 	height: 80px;
-	/*padding: 0 80px;*/
 	padding: 0 calc(100%/18) 0 calc(100%/22);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18);
+	@media (max-width: 744px) {
+		display: none;
+	}
 `
 export const Logo = styled.div`
 	width: 50px;
@@ -18,7 +20,7 @@ export const Logo = styled.div`
 		height: 100%;
 		text-decoration: none;
 		font-size: 25px;
-		color: #61dafb;
+		color: #ff385d;
 		font-weight: bold;
 	}
 	& a img {

@@ -32,17 +32,43 @@ export const SubNav = styled.nav`
 	background-color: ${props=> getNavStyle(props.subNav).backgroundColor };
 	box-shadow: ${props=> getNavStyle(props.subNav).boxShadow };
 	padding: ${props=> getNavStyle(props.subNav).padding };
+	@media (max-width: 744px) {
+		padding: 20px 16px;
+		position: sticky;
+		top: 0;
+		background-color: white;
+	}
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	
-	& div:nth-child(1) a {
+	& div:nth-child(1) a:nth-of-type(1) {
 		display: ${props=> getNavStyle(props.subNav).displayAnchorLink };
 		font-size: 14px;
 		color: rgb(34, 34, 34);
+		@media (max-width: 744px) {
+			display: none;
+		}
+	}
+	& div:nth-child(1) a:nth-of-type(2) {
+		display: none;
+		font-size: 14px;
+		font-weight: 600;
+		text-decoration: none;
+		img {
+			width: 14px;
+			height: 14px;
+			padding: 0 8px;
+		}
+		@media (max-width: 744px) {
+			display: inline-flex;
+			align-items: center;
+		}
 	}
 	& div:nth-child(1) button {
 		display: ${props=> getNavStyle(props.subNav).displayButton };
+		@media (max-width: 744px) {
+			display: none;
+		}
 		height: 80px;
 		margin-right: 24px;
 		font-size: 14px;
@@ -68,6 +94,9 @@ export const SubNav = styled.nav`
 		margin-right: ${props=>getNavStyle(props.subNav).rightDivMarginRight };
 		button {
 			font-size: 14px;
+			@media (max-width: 744px) {
+				font-size: 0;
+			}
 			padding: 4px 8px;
 			display: flex;
 			position: relative;
@@ -76,6 +105,9 @@ export const SubNav = styled.nav`
 				width: 16px;
 				height: 16px;
 				margin-right: 8px;
+				@media (max-width: 744px) {
+					margin-right: 0;
+				}
 			}
 		}
 	}
@@ -89,5 +121,8 @@ export const SubNav = styled.nav`
     z-index: -1;
     border-radius: 8px;
     background-color: rgb(247, 247, 247);
+    @media (max-width: 744px) {
+			border-radius: 100%;
+		}
 	}
 `

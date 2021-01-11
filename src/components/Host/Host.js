@@ -31,7 +31,11 @@ function Host({ host }) {
 				<p>I am a visual artist specialized in painting and drawing, currently pursuing a PhD in visual arts. My work is mainly figurative and I am inspired by everything that surrounds me, especially nature and its wide range of forms. I love sharing my work and experience with other people!</p>
 				<div>
 					<a href='/'>Contact host</a>
-					<span><img src={protect} alt='protect'/>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. <a href='/'>Learn more</a></span>
+					<span><img src={protect} alt='protect'/>
+						<span id='security'>
+							<p>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p><a href='/'>Learn more</a>
+						</span>
+					</span>
 				</div>
 			</HostInfo>
 			<Divider></Divider>

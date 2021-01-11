@@ -4,6 +4,7 @@ import SubNavigation from './components/SubNavigation/SubNavigation';
 import ImageGrid from './components/ImageGrid/ImageGrid';
 import Overview from './components/Overview/Overview';
 import Availability from './components/Availability/Availability';
+import AvailabilityNav from './components/Availability/AvailabilityNav';
 import Host from './components/Host/Host';
 import Reviews from './components/Reviews/Reviews';
 import { ModalProvider } from './components/Modal/ModalContext';
@@ -16,6 +17,9 @@ const MainContent = styled.div`
 	display: grid;
 	grid-template-columns: 5fr 3fr;
 	margin-top: 12px;
+	@media (max-width: 744px) {
+		display: flex;
+	}
 `
 
 function App() {
@@ -67,6 +71,7 @@ function App() {
 	      	<Host host={info.host} />
 	      	<Reviews rating={info.rating} numberOfReviews={info.numberOfReviews} />
 	      </main>
+	      <AvailabilityNav price={info.price} />
 	    </div>
     </ModalProvider>
     </HeadshotProvider>

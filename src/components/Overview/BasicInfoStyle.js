@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Infos = styled.div`
+	margin: 48px 0 24px 0;
+	@media (max-width: 744px) {
+		margin: 32px 0 8px 0;
+	}
+`
+
 export const Title = styled.div`
 	margin-bottom: 12px;
 	height: 56px;
@@ -24,6 +31,10 @@ export const Info = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 	gap: 4px;
+	@media (max-width: 744px) {
+		display: flex;
+		flex-direction: column;
+	}
 	& div {
 		display: flex;
 		align-items: center;

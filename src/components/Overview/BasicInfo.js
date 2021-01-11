@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { Title, Info } from './BasicInfoStyle';
+import { Infos, Title, Info } from './BasicInfoStyle';
 import HeadshotContext from '../Headshot/HeadshotContext';
 import user from '../../icons/user.svg';
 import time from '../../icons/time.svg';
@@ -19,7 +19,7 @@ function BasicInfo({ host, students, privateGroup, basicInfo }) {
 	}, []);
 
 	return (
-		<div style={{ margin: '48px 0 24px 0' }}>
+		<Infos>
 			<Title>
 				<h1>Online experience hosted by {hostName}</h1>
 				<a href='/'>
@@ -53,7 +53,7 @@ function BasicInfo({ host, students, privateGroup, basicInfo }) {
 					})}</p>
 				</div>
 			</Info>
-		</div>
+		</Infos>
 	)
 }
 

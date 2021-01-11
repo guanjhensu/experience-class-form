@@ -5,6 +5,9 @@ export const Title = styled.h1`
 	font-weight: 500;	
 	margin-top: 48px;
 	margin-bottom: 32px;
+	@media (max-width: 744px) {
+		margin-top: 32px;
+	}
 `
 export const Lists = styled.ul`
 	list-style: none;
@@ -27,6 +30,9 @@ export const Lists = styled.ul`
 export const ShowAll = styled.button`
 	margin-top: 24px;
 	margin-bottom: 48px;
+	@media (max-width: 744px) {
+		margin-bottom: 32px;
+	}
 	text-decoration: underline;
 	font-size: 16px;
 	color: rgb(113, 113, 113);

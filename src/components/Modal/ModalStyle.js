@@ -10,7 +10,7 @@ export const ModalBack = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-	z-index: 1;
+	z-index: 2;
 	background-color: rgba(0,0,0,0.3);
 	animation: ${appear} 0.4s ease-out;
 	display: grid;
@@ -40,8 +40,12 @@ export const ModalContent = styled.div`
 	margin: auto;
 	width: ${props=> getModalSize(props.modalSize).width };
 	height: ${props=> getModalSize(props.modalSize).height };
+	@media (max-width: 744px) {
+		width: 90vw;
+		height: 90vh;
+	}
   padding: 24px;
-  overflow: auto; /* Enable scroll if needed */
+  overflow: auto;
   position: relative;
   animation: ${appearfrombottom} 0.4s ease-out;
 `

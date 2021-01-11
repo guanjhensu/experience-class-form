@@ -2,9 +2,16 @@ import styled from 'styled-components';
 
 export const HostInfo = styled.div`
 	padding: 48px calc(100%/18);
+	@media (max-width: 744px) {
+		padding: 32px calc(100%/18);
+	}
 	& div:nth-child(1) {
 		height: 56px;
 		display: flex;
+		@media (max-width: 744px) {
+			flex-direction: row-reverse;
+			justify-content: space-between;
+		}
 		align-items: center;
 		margin-bottom: 24px;
 		a {
@@ -43,6 +50,7 @@ export const HostInfo = styled.div`
 			padding: 0 12px 0 0;
 			display: flex;
 			align-items: center;
+			white-space:nowrap;
 				img {
 				height: 16px;
 				object-fit: cover;
@@ -67,12 +75,12 @@ export const HostInfo = styled.div`
 			padding: 13px 23px;
 			border-radius: 8px;
 			text-decoration: none;
-			font-weight: bold;
+			font-weight: 500;
+			text-align: center;
+			flex-shrink: 0;
 		}
 		span {
 			margin-left: 36px;
-			font-size: 12px;
-			font-weight: 300;
 			height: 24px;
 			display: inline-flex;
 			align-items: center;
@@ -81,10 +89,42 @@ export const HostInfo = styled.div`
 				height: 22px;
 				margin-right: 16px;
 			}
+			#security {
+				margin-left: 0;
+				display: inline-block;
+				height: auto;
+				p {
+					display: inline;
+					font-size: 12px;
+					font-weight: 300;
+					line-height: 16px;
+				}
+				a {
+					display: inline;
+					text-decoration: underline;
+					border: none;
+					padding: 0 0 0 3px;
+					font-size: 12px;
+				}
+			}
+		}
+		@media (max-width: 744px) {
+			display: flex;
+			flex-direction: column;
 			a {
-				text-decoration: underline;
-				border: none;
-				padding: 0 0 0 3px;
+				width: 90%;
+				margin-bottom: 32px;
+			}
+			& span {
+				flex-direction: row-reverse;
+				margin-left: 0;
+				img {
+					margin-right: 0;
+					margin-left: 16px;
+				}
+			}
+			#security {
+				flex-direction: row;
 			}
 		}
 	}

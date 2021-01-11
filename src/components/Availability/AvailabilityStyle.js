@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const AvailabilityStyled = styled.div`
 	padding: 48px calc(100%/7) 48px calc(100%/10);
 	display: flex;
+	@media (max-width: 744px) {
+		display: none;
+	}
 `
 export const TimeTable = styled.div`
 	position: sticky;

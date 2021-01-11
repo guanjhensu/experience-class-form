@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SubNav } from './SubNavigationStyle';
 import share from '../../icons/share.svg';
 import heart from '../../icons/heart.svg';
+import arrowLeft from '../../icons/arrowLeft.svg';
 
 function SubNavigation() {
 
@@ -18,7 +19,6 @@ function SubNavigation() {
 	}
 
 	useEffect(()=>{
-		console.log('useEffect')
 		document.addEventListener('scroll', handleScroll);
 		return () => document.removeEventListener('scroll', handleScroll);
 	});
@@ -27,6 +27,7 @@ function SubNavigation() {
 		<SubNav subNav={subNav}>
 			<div>
 				<a href='/'>All online experiences</a>
+				<a href='/'><img src={arrowLeft} alt='experiences' />Experiences</a>
 				<button>Overview</button>
 				<button>The host</button>
 				<button>Reviews</button>

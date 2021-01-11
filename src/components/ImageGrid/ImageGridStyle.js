@@ -49,6 +49,27 @@ export const Grid = styled.div`
 	& div {
 		position: relative;
 	}
+	@media (max-width: 744px) {
+		& {
+			display: flex;
+			padding: 0;
+			overflow: auto;
+			scroll-snap-type: x mandatory;
+		}
+		& div {
+			flex-shrink: 0;
+			width: 100vw;
+			scroll-snap-align: start;
+		}
+		& .item-0 img {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+		& .item-4 img {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+	}
+	}
 `
 export const CreditPhotographer = styled.a`
 	position: absolute;

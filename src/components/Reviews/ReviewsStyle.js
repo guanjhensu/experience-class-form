@@ -2,11 +2,20 @@ import styled from 'styled-components';
 
 export const ReviewsStyle = styled.div`
 	padding: 48px calc(100%/18);
+	@media (max-width: 744px) {
+		padding: 32px calc(100%/18);
+	}
 	& #comments {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		column-gap: 70px;
 		row-gap: 50px;
+		@media (max-width: 744px) {
+			display: flex;
+			gap: 0;
+			overflow: auto;
+			scroll-snap-type: x mandatory;
+		}
 	}
 `
 export const Rating = styled.div`
@@ -18,7 +27,7 @@ export const Rating = styled.div`
 	& span {
 		font-size: 22px;
     line-height: 26px;
-    font-weight: 600;
+    font-weight: 500;
     margin-right: 3px;
 	}
 `
@@ -54,6 +63,20 @@ export const Comment = styled.div`
 	}
 	& p {
 		font-weight: 300;
+		line-height: 24px;
+	}
+	@media (max-width: 744px) {
+		flex-basis: 70vw;
+		flex-shrink: 0;
+		border: 1px solid #dddddd;
+		border-radius: 12px;
+		padding: 32px 16px 32px 16px;
+		margin-right: 10px;
+		scroll-snap-align: start;
+		& div img {
+			width: 40px;
+			height: 40px;
+		}
 	}
 `
 export const Divider = styled.div`

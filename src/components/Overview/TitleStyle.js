@@ -4,6 +4,9 @@ export const OnlineExperience = styled.div`
 	display: flex;
 	align-items: center;
 	margin-top: 48px;
+	@media (max-width: 744px) {
+		margin-top: 20px;
+	}
 	margin-bottom: 8px;
 	& img {
 		width: 16px;
@@ -25,11 +28,16 @@ export const ClassTitle = styled.h1`
 `
 export const Info = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	margin-top: 8px;
 	margin-bottom: 48px;
+	@media (max-width: 744px) {
+		margin-bottom: 30px;
+	}
 	& span {
 		font-size: 14px;
+		flex: 0 0 auto;
 	}
 	& span a {
 		font-weight: bold;

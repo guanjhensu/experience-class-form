@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { ReviewsStyle, Rating, Comment, Divider } from './ReviewsStyle';
+import React, { useState, useEffect } from 'react';
+import { ReviewsStyle, Rating, Comment } from './ReviewsStyle';
 import UnsplashAPI from '../../api/UnsplashAPI';
 import star from '../../icons/star.svg';
 import user from '../../icons/user.svg';
@@ -56,7 +56,6 @@ function Reviews({ rating, numberOfReviews }) {
 					})}
 				</div>
 			</ReviewsStyle>
-			<Divider></Divider>
 		</>
 	)
 }

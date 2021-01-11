@@ -5,6 +5,9 @@ export const Title = styled.h1`
 	font-weight: 500;	
 	margin-top: 48px;
 	margin-bottom: 24px;
+	@media (max-width: 744px) {
+		margin-top: 32px;
+	}
 `
 export const Cards = styled.div`
 	display: grid;
@@ -13,7 +16,7 @@ export const Cards = styled.div`
 	margin-bottom: 48px;
 	& div {
 		border: 1px solid #dddddd;
-		border-radius: 8px;
+		border-radius: 12px;
 		padding: 32px 16px 32px 16px;
 		img {
 			width: 32px;
@@ -35,6 +38,20 @@ export const Cards = styled.div`
 			text-decoration: underline;
 			font-size: 16px;
 			color: rgb(113, 113, 113);
+		}
+	}
+	@media (max-width: 744px) {
+		margin-bottom: 32px;
+		display: flex;
+		height: 250px;
+		overflow: auto;
+		gap: 0;
+		scroll-snap-type: x mandatory;
+		& div {
+			flex-shrink: 0;
+			flex-basis: 60vw;
+			margin-right: 10px;
+			scroll-snap-align: start;
 		}
 	}
 `
