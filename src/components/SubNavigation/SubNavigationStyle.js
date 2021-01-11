@@ -92,6 +92,9 @@ export const SubNav = styled.nav`
 		display: flex;
 		flex-direction: row;
 		margin-right: ${props=>getNavStyle(props.subNav).rightDivMarginRight };
+		@media (max-width: 744px) {
+			margin-right: 0;
+		}
 		button {
 			font-size: 14px;
 			@media (max-width: 744px) {

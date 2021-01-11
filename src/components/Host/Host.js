@@ -16,7 +16,7 @@ function Host({ host }) {
 			<HostInfo>
 				<div>
 					<a href='/'>
-						{ (!data) ? <img src={user} alt='default host' />
+						{ (!data || !data.response) ? <img src={user} alt='default host' />
 					 : <img src={data.response.urls.thumb} alt='host' /> }
 					</a>
 					<div>

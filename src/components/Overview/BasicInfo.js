@@ -23,7 +23,7 @@ function BasicInfo({ host, students, privateGroup, basicInfo }) {
 			<Title>
 				<h1>Online experience hosted by {hostName}</h1>
 				<a href='/'>
-					{ (!data) ? <img src={user} alt='default host' />
+					{ (!data || !data.response) ? <img src={user} alt='default host' />
 				 : <img src={data.response.urls.thumb} alt='host' /> }
 				</a>
 			</Title>

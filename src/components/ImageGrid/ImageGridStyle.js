@@ -53,7 +53,8 @@ export const Grid = styled.div`
 		& {
 			display: flex;
 			padding: 0;
-			overflow: auto;
+			overflow-x: auto;
+			overflow-y: hidden;
 			scroll-snap-type: x mandatory;
 		}
 		& div {

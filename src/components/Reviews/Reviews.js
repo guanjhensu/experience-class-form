@@ -43,7 +43,7 @@ function Reviews({ rating, numberOfReviews }) {
 						return (
 							<Comment key={i}>
 								<div>
-									<img src={ (!userPhotos) ? user : userPhotos.response.results[i].urls.thumb	} 
+									<img src={ (!userPhotos || !userPhotos.response) ? user : userPhotos.response.results[i].urls.thumb	} 
 										alt='user' />
 									<span>
 										<p>{comment.name}</p>
