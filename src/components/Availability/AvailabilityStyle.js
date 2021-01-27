@@ -19,6 +19,7 @@ export const TimeTable = styled.div`
 	background-color: white;
 `
 export const Price = styled.div`
+	position: relative;
 	& span:nth-child(1) {
 		font-size: 22px;
 		font-weight: 500;

@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { AvailabilityStyled, TimeTable, Price, DateSelection, Choose, More } from './AvailabilityStyle';
 import arrowDown from '../../icons/arrowDown.svg';
+import AllPrices from './AllPrices';
+import useOutsideClick from '../../hooks/useOutsideClick';
 
 function Availability({ price, privateGroup, dates }) {
+	const [ showAllPrices, setShowAllPrices ] = useState(false);
+	const pricesRef = useRef(null);
+	useOutsideClick(pricesRef, () => {
+		if(showAllPrices) setShowAllPrices(false);
+	})
+
 	return (
 		<AvailabilityStyled>
 			<TimeTable>
 				<Price>
 					<span>From €{price.eachGuest}</span>
 					<span>/ person</span>
-					<button>Show all prices</button>
+					<button onClick={()=>setShowAllPrices(!showAllPrices)}>Show all prices</button>
+					{ showAllPrices && <div ref={pricesRef}>
+															<AllPrices/>
+														</div> }
 				</Price>
 				<DateSelection>
 					<button>
